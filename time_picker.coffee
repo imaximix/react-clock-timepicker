@@ -50,7 +50,7 @@ module.exports = React.createClass
         @setCenter()
 
         # guarentee correct sizing after init
-        setTimeout @setCenter, 0
+        window.setTimeout @setCenter, 0
 
     componentWillUnmount: ->
         window.removeEventListener 'resize', @setCenter

@@ -1,14 +1,19 @@
 React = require 'react'
 TestUtils = require('react/addons').addons.TestUtils
 
-TimePicker = require './time_picker'
+TimePicker = require './time_picker.coffee'
 
 
 describe 'TimePicker', ->
 
     beforeEach ->
+        # specifically stubbing setTimeout from componentDidMount
+        @timeOutStub = @sinon.stub @window, 'setTimeout'
         @onTimeChangeStub = @sinon.stub()
         @container = @document.createElement 'div'
+
+    afterEach ->
+        @timeOutStub.restore()
 
     describe 'with default settings', ->
 
@@ -45,8 +50,7 @@ describe 'TimePicker', ->
                 svgNode.offsetWidth = 500
                 svgNode.offsetHeight = 500
 
-                @resizeStub = @sinon.stub window, 'addEventListener'
-
+                @resizeStub = @sinon.stub @window, 'addEventListener'
                 @timePickerView.componentDidMount()
 
             afterEach ->
@@ -62,6 +66,9 @@ describe 'TimePicker', ->
 
             it 'sets the clock radius', ->
                 @timePickerView.state.clockRadius.should.be.ok
+
+            it 'sets a timeout to ensure the timepicker has the correct radius', ->
+                @timeOutStub.args[0][0].should.eql @timePickerView.setCenter
 
         describe 'after window resized to be more wide than tall;', ->
 
