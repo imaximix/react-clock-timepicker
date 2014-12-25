@@ -79,11 +79,10 @@ Blog post: [http://parrisneeds.coffee/2014/12/25/react-timepicker/](http://parri
 To try out the example yourself:
 
 1. clone the repo
-2. npm install (this might fail, but its ok)
-3. `npm install react`
-4. `npm test`
-5. run `npm run-script build-example`
-6. open example/index.html
+2. `npm install react`
+3. `npm install`
+4. run `npm run-script build-example`
+5. open example/index.html
 
 
 Compatibility
@@ -109,7 +108,7 @@ Contributions welcome but require unit tests!
 Contribution Notes
 ------------------
 
-- you need manually `npm install react` and uninstall it before you `npm link`
+- you need to manually `npm install react` and uninstall it before you `npm link`
     - does anyone know how to make this less annoying?
 - the main time_picker.js file is generated on prepublish
 - .less/.scss files are created from the .css file on prepubish
