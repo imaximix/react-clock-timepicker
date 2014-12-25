@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/parris/react-android-timepicker.png)](http://travis-ci.org/parris/react-android-timepicker)
+
 React Android TimePicker Component
 ==================================
 
