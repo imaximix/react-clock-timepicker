@@ -217,6 +217,17 @@ module.exports = React.createClass
         hourHandleScale = if @state.currentDragType == 'hour' then 1.1 else 1
         minuteHandleScale = if @state.currentDragType == 'minute' then 1.1 else 1
 
+        minuteArmY2 = @state.yCenter - @state.clockRadius * .75
+        hourArmY2 = @state.yCenter - @state.clockRadius * .5
+
+        minuteHandlePosition =
+            x: @state.xCenter
+            y: minuteArmY2 + @state.minuteHandRadius * 1.5
+
+        hourHandlePosition =
+            x: @state.xCenter
+            y: hourArmY2 + @state.hourHandRadius * 1.5
+
         <time className="time-picker">
             <svg ref="svgContainer" className="time-picker__clock">
                 <circle
@@ -236,7 +247,7 @@ module.exports = React.createClass
                     x1="#{ @state.xCenter }"
                     y1="#{ @state.yCenter }"
                     x2="#{ @state.xCenter }"
-                    y2="#{ @state.clockRadius / 3 }"
+                    y2="#{ minuteArmY2 }"
                     transform="rotate(#{ @state.minuteRotation }, #{ @state.xCenter }, #{ @state.yCenter })"
                     onMouseDown={ @handleMinuteDragStart }
                     onTouchStart={ @handleMinuteDragStart }
@@ -244,10 +255,10 @@ module.exports = React.createClass
                 <circle
                     className="time-picker__handle time-picker__handle--minute"
                     ref="minuteHandle"
-                    cx="#{ @state.xCenter }"
-                    cy="#{ @state.clockRadius / 3 + @state.minuteHandRadius * 1.5 }"
+                    cx="#{ minuteHandlePosition.x }"
+                    cy="#{ minuteHandlePosition.y }"
                     r={ @state.minuteHandRadius }
-                    transform="rotate(#{ @state.minuteRotation }, #{ @state.xCenter }, #{ @state.yCenter }) translate(#{-1 * @state.xCenter * (minuteHandleScale - 1) }, #{-115 * (minuteHandleScale - 1) }) scale(#{minuteHandleScale})"
+                    transform="rotate(#{ @state.minuteRotation }, #{ @state.xCenter }, #{ @state.yCenter }) translate(#{-1 * @state.xCenter * (minuteHandleScale - 1) }, #{-1 * minuteHandlePosition.y * (minuteHandleScale - 1) }) scale(#{minuteHandleScale})"
                     onMouseDown={ @handleMinuteDragStart }
                     onTouchStart={ @handleMinuteDragStart }
                 />
@@ -256,20 +267,20 @@ module.exports = React.createClass
                     x1="#{ @state.xCenter }"
                     y1="#{ @state.yCenter }"
                     x2="#{ @state.xCenter }"
-                    y2="#{ @state.clockRadius / 2 }"
+                    y2="#{ hourArmY2 }"
                     onMouseDown={ @handleHourDragStart }
                     onTouchStart={ @handleHourDragStart }
                     transform="rotate(#{ @state.hourRotation }, #{ @state.xCenter }, #{ @state.yCenter })"
                 />
                 <circle
-                    className="time-picker__handle time-picker__handle--minute"
+                    className="time-picker__handle time-picker__handle--hour"
                     ref="hourHandle"
-                    cx="#{ @state.xCenter }"
-                    cy="#{ @state.clockRadius / 2 + @state.hourHandRadius * 1.5 }"
+                    cx="#{ hourHandlePosition.x }"
+                    cy="#{ hourHandlePosition.y }"
                     r={ @state.hourHandRadius }
                     onMouseDown={ @handleHourDragStart }
                     onTouchStart={ @handleHourDragStart }
-                    transform="rotate(#{ @state.hourRotation }, #{ @state.xCenter }, #{ @state.yCenter }) translate(#{-1 * @state.xCenter * (hourHandleScale - 1) }, #{-145 * (hourHandleScale - 1) }) scale(#{hourHandleScale})"
+                    transform="rotate(#{ @state.hourRotation }, #{ @state.xCenter }, #{ @state.yCenter }) translate(#{-1 * @state.xCenter * (hourHandleScale - 1) }, #{-1 * hourHandlePosition.y * (hourHandleScale - 1) }) scale(#{hourHandleScale})"
                 />
                 <g className="time-picker__hours">
                     { if @state.areNumbersVisible then [1..12].map(@drawHour) else '' }
