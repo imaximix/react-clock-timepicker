@@ -1,6 +1,6 @@
 {
   "name": "react-android-timepicker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An android calendar time picker implemented in ReactJS",
   "main": "time_picker.js",
   "scripts": {
