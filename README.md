@@ -89,13 +89,10 @@ To try out the example yourself:
 Compatibility
 -------------
 
-Requires a version of React to be installed:
-- Tested a bit with react ~0.10.0
-- Developed using react ~0.12.0
-
-Requires Browsers with SVG: IE9+
-
-Animations Require CSS3, but should be ignored otherwise
+- Requires Browsers with SVG: IE9+
+- Currently broken in Firefox and IE
+- Developed using react ~0.12.0, likely works in 0.10.0
+- Animations Require CSS3, but should be ignored otherwise
 
 Task List
 ---------
@@ -106,6 +103,8 @@ Contributions welcome but require unit tests!
 - Add some material design effects when tapping on the circles
   - A flash on tap of the handles
   - Animate scaling
+- Browser compatibility (IE and FF support)
+- Test with marginally older versions of react
 
 Contribution Notes
 ------------------
