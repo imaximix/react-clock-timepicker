@@ -45,7 +45,8 @@ module.exports = React.createClass({
   },
   componentDidMount: function() {
     window.addEventListener('resize', this.setCenter);
-    return this.setCenter();
+    this.setCenter();
+    return window.setTimeout(this.setCenter, 0);
   },
   componentWillUnmount: function() {
     return window.removeEventListener('resize', this.setCenter);
