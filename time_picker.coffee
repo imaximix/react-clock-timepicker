@@ -49,6 +49,9 @@ module.exports = React.createClass
         window.addEventListener 'resize', @setCenter
         @setCenter()
 
+        # guarentee correct sizing after init
+        setTimeout @setCenter, 0
+
     componentWillUnmount: ->
         window.removeEventListener 'resize', @setCenter
 
