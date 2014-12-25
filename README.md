@@ -72,7 +72,7 @@ Options
 Demo
 ----
 
-Blog post:
+Blog post: [http://parrisneeds.coffee/2014/12/25/react-timepicker/](http://parrisneeds.coffee/2014/12/25/react-timepicker/)
 
 To try out the example yourself:
 
