@@ -1,0 +1,35 @@
+{
+  "name": "react-android-timepicker",
+  "version": "0.0.2",
+  "homepage": "https://github.com/parris/react-android-timepicker",
+  "authors": [
+    "Parris Khachi <parris@letswoosh.com>"
+  ],
+  "description": "An android inspired time picker implemented in ReactJS",
+  "main": "time_picker.js",
+  "keywords": [
+    "time",
+    "picker",
+    "timepicker",
+    "android",
+    "reactjs",
+    "react",
+    "time",
+    "selector",
+    "timeselector",
+    "time"
+  ],
+  "license": "Apache2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "example",
+    "coverage"
+  ],
+  "dependencies": {
+    "react": "~0.12.2"
+  }
+}
