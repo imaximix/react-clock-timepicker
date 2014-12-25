@@ -1,0 +1,66 @@
+.time-picker__clock {
+    width: 100%;
+    height: 75%;
+}
+
+.time-picker__arm {
+    stroke: #2E2633;
+    stroke-width: 3;
+    cursor: pointer;
+}
+
+.time-picker__handle {
+    transition: all 5s ease-in-out;
+    cursor: pointer;
+    fill: #2E2633;
+}
+
+.time-picker__face {
+    fill: #99173C;
+}
+
+.time-picker__center-point {
+    fill: #2E2633;
+}
+
+.time-picker__numbers {
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    font-weight: 100;
+    stroke: #DCE9BE;
+    fill: #DCE9BE;
+    transition: opacity .35s;
+
+    /* IMPORTANT: you definitely need these 2 rules or things will appear off */
+    text-anchor: middle;
+    dominant-baseline: central;
+}
+
+.time-picker__numbers--hidden {
+    opacity: 0;
+}
+
+.time-picker__ampm {
+    margin: 0 auto;
+    padding: 0;
+    font-size: 0;
+    width: 500px;
+    border: none;
+}
+
+.time-picker__ampm__toggle {
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    color: #DCE9BE;
+    font-weight: 100;
+    display: inline-block;
+    width: 50%;
+    font-size: 16px;
+    background: #99173C;
+    padding: 15px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.time-picker__ampm__toggle--active {
+    box-shadow: inset 0px -5px 0px #555152;
+}

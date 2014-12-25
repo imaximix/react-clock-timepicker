@@ -1,0 +1,44 @@
+{
+  "name": "react-android-timepicker",
+  "version": "0.0.1",
+  "description": "An android calendar time picker implemented in ReactJS",
+  "main": "time_picker.js",
+  "scripts": {
+    "test": "mocha ./test/spec_helper.coffee time_picker.spec.coffee",
+    "debug-test": "mocha debug ./test/spec_helper.coffee time_picker.spec.coffee",
+    "example-build": "node_modules/.bin/browserify -t coffee-reactify --extension=.coffee example/main.coffee > example/main.js",
+    "prepublish": "npm test && cjsx -cb time_picker.coffee && cp css/time_picker.css css/time_picker.scss && cp css/time_picker.css css/time_picker.less"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/parris/react-android-timepicker.git"
+  },
+  "keywords": [
+    "time picker",
+    "timepicker",
+    "android",
+    "reactjs",
+    "react",
+    "time selector",
+    "timeselector",
+    "time"
+  ],
+  "author": "Parris Khachi",
+  "license": "Apache2.0",
+  "bugs": {
+    "url": "https://github.com/parris/react-android-timepicker/issues"
+  },
+  "homepage": "https://github.com/parris/react-android-timepicker",
+  "devDependencies": {
+    "coffee-react": "~2.1.2",
+    "mocha": "~2.0.1",
+    "sinon": "~1.12.2",
+    "mocha-sinon": "~1.1.4",
+    "jsdom": "~1.5.0",
+    "should": "~4.4.1",
+    "browserify": "~7.0.3"
+  },
+  "peerDependencies": {
+    "react": ">= 0.10.0"
+  }
+}
