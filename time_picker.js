@@ -193,9 +193,19 @@ module.exports = React.createClass({
     return this.triggerTimeUpdate();
   },
   render: function() {
-    var hourHandleScale, minuteHandleScale;
+    var hourArmY2, hourHandlePosition, hourHandleScale, minuteArmY2, minuteHandlePosition, minuteHandleScale;
     hourHandleScale = this.state.currentDragType === 'hour' ? 1.1 : 1;
     minuteHandleScale = this.state.currentDragType === 'minute' ? 1.1 : 1;
+    minuteArmY2 = this.state.yCenter - this.state.clockRadius * .75;
+    hourArmY2 = this.state.yCenter - this.state.clockRadius * .5;
+    minuteHandlePosition = {
+      x: this.state.xCenter,
+      y: minuteArmY2 + this.state.minuteHandRadius * 1.5
+    };
+    hourHandlePosition = {
+      x: this.state.xCenter,
+      y: hourArmY2 + this.state.hourHandRadius * 1.5
+    };
     return React.createElement("time", {
       "className": "time-picker"
     }, React.createElement("svg", {
@@ -216,17 +226,17 @@ module.exports = React.createClass({
       "x1": "" + this.state.xCenter,
       "y1": "" + this.state.yCenter,
       "x2": "" + this.state.xCenter,
-      "y2": "" + (this.state.clockRadius / 3),
+      "y2": "" + minuteArmY2,
       "transform": "rotate(" + this.state.minuteRotation + ", " + this.state.xCenter + ", " + this.state.yCenter + ")",
       "onMouseDown": this.handleMinuteDragStart,
       "onTouchStart": this.handleMinuteDragStart
     }), React.createElement("circle", {
       "className": "time-picker__handle time-picker__handle--minute",
       "ref": "minuteHandle",
-      "cx": "" + this.state.xCenter,
-      "cy": "" + (this.state.clockRadius / 3 + this.state.minuteHandRadius * 1.5),
+      "cx": "" + minuteHandlePosition.x,
+      "cy": "" + minuteHandlePosition.y,
       "r": this.state.minuteHandRadius,
-      "transform": "rotate(" + this.state.minuteRotation + ", " + this.state.xCenter + ", " + this.state.yCenter + ") translate(" + (-1 * this.state.xCenter * (minuteHandleScale - 1)) + ", " + (-115 * (minuteHandleScale - 1)) + ") scale(" + minuteHandleScale + ")",
+      "transform": "rotate(" + this.state.minuteRotation + ", " + this.state.xCenter + ", " + this.state.yCenter + ") translate(" + (-1 * this.state.xCenter * (minuteHandleScale - 1)) + ", " + (-1 * minuteHandlePosition.y * (minuteHandleScale - 1)) + ") scale(" + minuteHandleScale + ")",
       "onMouseDown": this.handleMinuteDragStart,
       "onTouchStart": this.handleMinuteDragStart
     }), React.createElement("line", {
@@ -234,19 +244,19 @@ module.exports = React.createClass({
       "x1": "" + this.state.xCenter,
       "y1": "" + this.state.yCenter,
       "x2": "" + this.state.xCenter,
-      "y2": "" + (this.state.clockRadius / 2),
+      "y2": "" + hourArmY2,
       "onMouseDown": this.handleHourDragStart,
       "onTouchStart": this.handleHourDragStart,
       "transform": "rotate(" + this.state.hourRotation + ", " + this.state.xCenter + ", " + this.state.yCenter + ")"
     }), React.createElement("circle", {
-      "className": "time-picker__handle time-picker__handle--minute",
+      "className": "time-picker__handle time-picker__handle--hour",
       "ref": "hourHandle",
-      "cx": "" + this.state.xCenter,
-      "cy": "" + (this.state.clockRadius / 2 + this.state.hourHandRadius * 1.5),
+      "cx": "" + hourHandlePosition.x,
+      "cy": "" + hourHandlePosition.y,
       "r": this.state.hourHandRadius,
       "onMouseDown": this.handleHourDragStart,
       "onTouchStart": this.handleHourDragStart,
-      "transform": "rotate(" + this.state.hourRotation + ", " + this.state.xCenter + ", " + this.state.yCenter + ") translate(" + (-1 * this.state.xCenter * (hourHandleScale - 1)) + ", " + (-145 * (hourHandleScale - 1)) + ") scale(" + hourHandleScale + ")"
+      "transform": "rotate(" + this.state.hourRotation + ", " + this.state.xCenter + ", " + this.state.yCenter + ") translate(" + (-1 * this.state.xCenter * (hourHandleScale - 1)) + ", " + (-1 * hourHandlePosition.y * (hourHandleScale - 1)) + ") scale(" + hourHandleScale + ")"
     }), React.createElement("g", {
       "className": "time-picker__hours"
     }, (this.state.areNumbersVisible ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(this.drawHour) : '')), React.createElement("g", {
