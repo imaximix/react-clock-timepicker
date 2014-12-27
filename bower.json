@@ -1,11 +1,11 @@
 {
-  "name": "react-android-timepicker",
-  "version": "0.0.3",
-  "homepage": "https://github.com/parris/react-android-timepicker",
+  "name": "react-clock-timepicker",
+  "version": "0.0.4",
+  "homepage": "https://github.com/parris/react-clock-timepicker",
   "authors": [
     "Parris Khachi <parris@letswoosh.com>"
   ],
-  "description": "An android inspired time picker implemented in ReactJS",
+  "description": "An android inspired clock time picker implemented in ReactJS",
   "main": "time_picker.js",
   "keywords": [
     "time",
