@@ -114,4 +114,3 @@ Contribution Notes
 - .less/.scss files are created from the .css file on prepubish
 - example/main.js is gitignored and needs to be manually created
 - your code will run through travis-ci
-
