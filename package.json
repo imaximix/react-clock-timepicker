@@ -1,6 +1,6 @@
 {
   "name": "react-android-timepicker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An android calendar time picker implemented in ReactJS",
   "main": "time_picker.js",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/parris/react-android-timepicker.git"
+    "url": "git://github.com/parris/react-clock-timepicker.git"
   },
   "keywords": [
     "time picker",
@@ -26,9 +26,9 @@
   "author": "Parris Khachi",
   "license": "Apache2.0",
   "bugs": {
-    "url": "https://github.com/parris/react-android-timepicker/issues"
+    "url": "https://github.com/parris/react-clock-timepicker/issues"
   },
-  "homepage": "https://github.com/parris/react-android-timepicker",
+  "homepage": "https://github.com/parris/react-clock-timepicker",
   "devDependencies": {
     "coffee-react": "~2.1.2",
     "mocha": "~2.0.1",

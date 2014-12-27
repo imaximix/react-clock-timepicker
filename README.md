@@ -1,5 +1,9 @@
 [![Build Status](https://secure.travis-ci.org/parris/react-android-timepicker.png)](http://travis-ci.org/parris/react-android-timepicker)
 
+!IMPORTANT: MOVING PACKAGE TO [https://www.npmjs.com/package/react-clock-timepicker](https://www.npmjs.com/package/react-clock-timepicker)
+
+If you want this package name talk to npm or contact me. I realized that the name was in accurate.
+
 React Android TimePicker Component
 ==================================
 
