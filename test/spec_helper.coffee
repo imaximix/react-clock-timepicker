@@ -9,6 +9,5 @@ global.window = document.parentWindow
 global.navigator = document.parentWindow.navigator
 
 beforeEach ->
-    # create a new document for each test
     @document = document
     @window = document.parentWindow
