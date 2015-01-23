@@ -81,7 +81,7 @@ To try out the example yourself:
 1. clone the repo
 2. `npm install react`
 3. `npm install`
-4. run `npm run-script build-example`
+4. run `npm run-script example-build`
 5. open example/index.html
 
 
